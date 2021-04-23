@@ -38,7 +38,11 @@ class App extends Component {
           <h1><a href="/" onClick={function(e){
             console.log(e);
             e.preventDefault();
-          }}>{this.state.subject.title}</a></h1>
+            //this.state.mode = 'welcome'; //잘못된 방식 -> 리액트가 값의 변경을 알지 못한다.
+            this.setState({
+               mode:'welcome'
+            });
+          }.bind(this)}>{this.state.subject.title}</a></h1>
           {this.state.subject.sub}
         </header>
         <TOC data={this.state.contents}></TOC>
