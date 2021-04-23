@@ -31,9 +31,15 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Subject
+        {/*<Subject
           title={this.state.subject.title}
-          sub={this.state.subject.sub}></Subject>
+          sub={this.state.subject.sub}></Subject>*/}
+        <header>
+          <h1><a href="/" onClick={function(){
+            alert('hi');
+          }}>{this.state.subject.title}</a></h1>
+          {this.state.subject.sub}
+        </header>
         <TOC data={this.state.contents}></TOC>
         <Content title={_title} desc={_desc}></Content>
       </div>
