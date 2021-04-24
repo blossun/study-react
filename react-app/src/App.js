@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TOC from "./components/TOC";
 import Content from "./components/Content";
 import Subject from "./components/Subject";
+import Control from "./components/Control";
 import './App.css';
 
 class App extends Component {
@@ -64,11 +65,7 @@ class App extends Component {
           }.bind(this)}
           data={this.state.contents}
         ></TOC>
-        <url>
-          <li><a href="/create">create</a></li>
-          <li><a href="/update">update</a></li>
-          <li><input type="button" value="delete"></input></li>
-        </url>
+        <Control></Control>
         <Content title={_title} desc={_desc}></Content>
       </div>
     );
