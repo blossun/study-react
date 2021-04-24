@@ -46,9 +46,12 @@ class App extends Component {
       _article = <CreateContent onSubmit={function (_title, _desc) {
         // add content to this.state.contents
         this.max_content_id += 1;
-        this.state.contents.push({id:this.max_content_id, title:_title, desc:_desc});
+        // this.state.contents.push({id:this.max_content_id, title:_title, desc:_desc});
+        var _contents = this.state.contents.concat(
+          {id:this.max_content_id, title:_title, desc:_desc}
+        );
         this.setState({
-          contents:this.state.contents //바뀐 contents를 넣어준다.
+          contents:_contents // 새롭게 만든 데이터로 교체
         })
         console.log(_title, _desc);
       }.bind(this)}></CreateContent>;
