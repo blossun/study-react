@@ -9,10 +9,14 @@ class CreateContent extends Component {
 				<form action="/create_process" method="post"
 					onSubmit={function (e) {
 						e.preventDefault(); //페이지변경 동작을 off
+						// debugger;
+						this.props.onSubmit(
+							e.target.title.value,
+							e.target.desc.value
+						);
 						alert('Submit!!!!!');
 					}.bind(this)}
 				>
-					<p><input type="text" name="title" placeholder="title"></input></p>
 					<p><input type="text" name="title" placeholder="title"></input></p>
 					<p>
 						<textarea name="desc" placeholder="description"></textarea>
