@@ -58,11 +58,17 @@ class App extends Component {
       }.bind(this)}></CreateContent>;
     } else if (this.state.mode === 'update') {
       _content = this.getReadContent();
-      _article = <UpdateContent data={_content} onSubmit={function (_title, _desc) {
-        // add content to this.state.contents
-        this.max_content_id += 1;
+      _article = <UpdateContent data={_content} onSubmit={function (_id, _title, _desc) {
+        //어느 대상을 업데이트할 것인지에 대한 식별자값 _id를 받아서 해당하는 content를 변경
         var newContents = Array.from(this.state.contents);
-        newContents.push({id:this.max_content_id, title:_title, desc:_desc});
+        var i = 0;
+        while (i < newContents.length) {
+          if (newContents[i].id === _id) {
+            newContents[i] = {id:_id, title:_title, desc:_desc};
+            break;
+          }
+          i++;
+        }
         this.setState({
           contents:newContents // 새롭게 만든 데이터로 교체
         })
