@@ -5,6 +5,7 @@ class UpdateContent extends Component {
 		super(props);
 		this.state = {
 			title: this.props.data.title,
+			desc:this.props.data.desc
 		}
 	}
 	render() {
@@ -29,14 +30,20 @@ class UpdateContent extends Component {
 							name="title"
 							placeholder="title"
 							value={this.state.title}
-							onChange={function(e) {
-								//console.log(e.target.value);
-								this.setState({title:e.target.value});
+							onChange={function (e) {
+								this.setState({ title: e.target.value });
 							}.bind(this)}
 						></input>
 					</p>
 					<p>
-						<textarea name="desc" placeholder="description"></textarea>
+						<textarea
+							onChange={function (e) {
+								this.setState({ desc: e.target.value });
+							}.bind(this)}
+							name="desc"
+							placeholder="description"
+							value={this.state.desc}
+						></textarea>
 					</p>
 					<p>
 						<input type="submit"></input>
