@@ -52,8 +52,10 @@ class App extends Component {
         var newContents = Array.from(this.state.contents);
         newContents.push({id:this.max_content_id, title:_title, desc:_desc});
         this.setState({
-          contents:newContents // 새롭게 만든 데이터로 교체
-        })
+          contents:newContents, // 새롭게 만든 데이터로 교체
+          mode:'read', //글 생성 후, 읽기모드로 전환
+          selected_content_id:this.max_content_id //새로 작성한 글의 id값으로 지정
+        });
         console.log(_title, _desc);
       }.bind(this)}></CreateContent>;
     } else if (this.state.mode === 'update') {
@@ -70,8 +72,9 @@ class App extends Component {
           i++;
         }
         this.setState({
-          contents:newContents // 새롭게 만든 데이터로 교체
-        })
+          contents:newContents, // 새롭게 만든 데이터로 교체
+          mode:'read' //글 수정 후, 읽기모드로 전환
+        });
         console.log(_title, _desc);
       }.bind(this)}></UpdateContent>;
     }
