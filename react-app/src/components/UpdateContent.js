@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class UpdateContent extends Component {
 	render() {
+		console.log(this.props.data); //data props가 잘 주입되었는지 확인
 		console.log('UpdateContent render');
 		return (
 			<article>
