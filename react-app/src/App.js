@@ -24,8 +24,7 @@ class App extends Component {
     }
   }
 
-  render() {
-    console.log('App render');
+  getContent() {
     var _title, _desc, _article = null;
     if (this.state.mode === 'welcome') {
       _title = this.state.welcome.title;
@@ -66,6 +65,12 @@ class App extends Component {
         console.log(_title, _desc);
       }.bind(this)}></UpdateContent>;
     }
+    return _article;
+  }
+
+  render() {
+    console.log('App render');
+    
     return (
       <div className="App">
         <Subject 
@@ -91,7 +96,7 @@ class App extends Component {
             mode:_mode
           });
         }.bind(this)}></Control>
-        {_article}
+        {this.getContent()}
       </div>
     );
   }
