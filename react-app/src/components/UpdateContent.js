@@ -5,8 +5,12 @@ class UpdateContent extends Component {
 		super(props);
 		this.state = {
 			title: this.props.data.title,
-			desc:this.props.data.desc
+			desc: this.props.data.desc
 		}
+		this.inputFormHandler = this.inputFormHandler.bind(this);
+	}
+	inputFormHandler(e) {
+		this.setState({ [e.target.name]: e.target.value });
 	}
 	render() {
 		console.log(this.props.data); //data props가 잘 주입되었는지 확인
@@ -30,16 +34,12 @@ class UpdateContent extends Component {
 							name="title"
 							placeholder="title"
 							value={this.state.title}
-							onChange={function (e) {
-								this.setState({ title: e.target.value });
-							}.bind(this)}
+							onChange={this.inputFormHandler}
 						></input>
 					</p>
 					<p>
 						<textarea
-							onChange={function (e) {
-								this.setState({ desc: e.target.value });
-							}.bind(this)}
+							onChange={this.inputFormHandler}
 							name="desc"
 							placeholder="description"
 							value={this.state.desc}
