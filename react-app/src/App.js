@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TOC from "./components/TOC";
 import ReadContent from "./components/ReadContent";
 import CreateContent from "./components/CreateContent";
+import UpdateContent from "./components/UpdateContent";
 import Subject from "./components/Subject";
 import Control from "./components/Control";
 import './App.css';
@@ -46,13 +47,6 @@ class App extends Component {
       _article = <CreateContent onSubmit={function (_title, _desc) {
         // add content to this.state.contents
         this.max_content_id += 1;
-        // 1. push 방식
-        // this.state.contents.push({id:this.max_content_id, title:_title, desc:_desc});
-        // 2. concat 방식
-        // var _contents = this.state.contents.concat(
-        //   {id:this.max_content_id, title:_title, desc:_desc}
-        // );
-        // 3. 불변 객체 + push 방식
         var newContents = Array.from(this.state.contents);
         newContents.push({id:this.max_content_id, title:_title, desc:_desc});
         this.setState({
@@ -60,6 +54,17 @@ class App extends Component {
         })
         console.log(_title, _desc);
       }.bind(this)}></CreateContent>;
+    } else if (this.state.mode === 'update') {
+      _article = <UpdateContent onSubmit={function (_title, _desc) {
+        // add content to this.state.contents
+        this.max_content_id += 1;
+        var newContents = Array.from(this.state.contents);
+        newContents.push({id:this.max_content_id, title:_title, desc:_desc});
+        this.setState({
+          contents:newContents // 새롭게 만든 데이터로 교체
+        })
+        console.log(_title, _desc);
+      }.bind(this)}></UpdateContent>;
     }
     return (
       <div className="App">
