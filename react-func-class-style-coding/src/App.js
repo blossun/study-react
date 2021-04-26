@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Hello World</h1>
+      <FuncComp initNumber={2}></FuncComp>
+      <ClassComp initNumber={2}></ClassComp>
     </div>
   );
+}
+
+function FuncComp(props) {
+  return (
+    <div className="container">
+      <h2>function style component</h2>
+      <p>Number : {props.initNumber}</p>
+    </div>
+  );
+}
+
+class ClassComp extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <h2>class style component</h2>
+        <p>Number : {this.props.initNumber}</p>
+      </div>
+    )
+  }
 }
 
 export default App;
