@@ -16,10 +16,11 @@ function FuncComp(props) {
   var number = numberState[0]; //state값
   var setNumber = numberState[1]; //함수가 담긴다. 이 함수를 통해서 number의 값을 변경할 수 있다.
 
-  var dateState = useState((new Date()).toString());
-  var _date = dateState[0]; //date가 키워드일 수 있기때문에 변수명을 _date로 함
-  var setDate = dateState[1];
+  // var dateState = useState((new Date()).toString());
+  // var _date = dateState[0]; //date가 키워드일 수 있기때문에 변수명을 _date로 함
+  // var setDate = dateState[1];
 
+  var [_date, setDate] = useState((new Date()).toString());
 
   console.log('numberState', numberState);
 
