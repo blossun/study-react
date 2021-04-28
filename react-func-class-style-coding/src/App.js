@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -11,6 +11,9 @@ function App() {
   );
 }
 
+var funcStyle = 'color:blue';
+var funcId = 0;
+
 function FuncComp(props) {
   var numberState = useState(props.initNumber);
   var number = numberState[0]; //state값
@@ -22,7 +25,32 @@ function FuncComp(props) {
 
   var [_date, setDate] = useState((new Date()).toString());
 
-  console.log('numberState', numberState);
+  useEffect(function(){
+    console.log('%cfunc => useEffect (componentDidMount) '+(++funcId), funcStyle);
+    document.title = number;
+    return function(){
+      console.log('%cfunc => useEffect return (componentWillUnMount) '+(++funcId), funcStyle);
+    }
+  }, []);
+
+  //side effect
+  useEffect(function(){
+    console.log('%cfunc => useEffect number (componentDidMount & componentDidUpdate) '+(++funcId), funcStyle);
+    document.title = number;
+    return function(){
+      console.log('%cfunc => useEffect number return (componentDidMount & componentDidUpdate) '+(++funcId), funcStyle);
+    }
+  }, [number]);
+
+  useEffect(function(){
+    console.log('%cfunc => useEffect _date (componentDidMount & componentDidUpdate) '+(++funcId), funcStyle);
+    document.title = _date;
+    return function(){
+      console.log('%cfunc => useEffect _date return (componentDidMount & componentDidUpdate) '+(++funcId), funcStyle);
+    }
+  }, [_date]);
+
+  console.log('%cfunc => render' +(++funcId), funcStyle);
 
   return (
     <div className="container">
@@ -43,12 +71,33 @@ function FuncComp(props) {
   );
 }
 
+var classStyle = 'color:red';
+
 class ClassComp extends React.Component {
   state = {
     number: this.props.initNumber,
     date: (new Date()).toString
   }
+
+  componentWillMount(){
+    console.log('%cclass => componentWillMount', classStyle);
+  }
+  componentDidMount(){
+    console.log('%cclass => componentDidMount', classStyle);
+  }
+  shouldComponentUpdate(nextProps, nextState){
+    console.log('%cclass => shouldComponentUpdate', classStyle);
+    return true; // render 호출 여부를 반환
+  }
+  componentWillUpdate(nextProps, nextState){
+    console.log('%cclass => componentWillUpdate', classStyle);
+  }
+  componentDidUpdate(nextProps, nextState){
+    console.log('%cclass => componentDidUpdate', classStyle);
+  }
+
   render() {
+    console.log('%cclass => render', classStyle);
     return (
       <div className="container">
         <h2>class style component</h2>
