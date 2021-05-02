@@ -46,7 +46,7 @@ json-server ./mockdata.json --port 4000
 
 - `[localhost:4000](http://localhost:4000)` 으로 접근하면 서버 메인페이지 확인가능
 
-![images/Untitled%200.png](images/Untitled%200.png)
+![images/json-server-0.png](images/json-server-0.png)
 
 ## GET - 목록확인
 
@@ -56,7 +56,7 @@ json-server ./mockdata.json --port 4000
 [http://localhost:4000/](http://localhost:4000/windows)members
 ```
 
-![images/Untitled%201.png](images/Untitled%201.png)
+![images/json-server-1.png](images/json-server-1.png)
 
 ## GET - 하나의 데이터 확인
 
@@ -66,7 +66,7 @@ json-server ./mockdata.json --port 4000
 [http://localhost:4000/](http://localhost:4000/windows)members/1
 ```
 
-![images/Untitled%202.png](images/Untitled%202.png)
+![images/json-server-2.png](images/json-server-2.png)
 
 ## POST - 레코드 생성
 
@@ -83,11 +83,11 @@ POST http://localhost:4000/members
 }
 ```
 
-![images/Untitled%203.png](images/Untitled%203.png)
+![images/json-server-3.png](images/json-server-3.png)
 
 목록을 다시 확인해보면 id값이 자동으로 부여되고 새롭게 데이터가 추가되었다.
 
-![images/Untitled%204.png](images/Untitled%204.png)
+![images/json-server-4.png](images/json-server-4.png)
 
 ## PUT - 레코드 수정
 
@@ -104,9 +104,9 @@ PUT http://localhost:4000/members/1
 }
 ```
 
-![images/Untitled%205.png](images/Untitled%205.png)
+![images/json-server-5.png](images/json-server-5.png)
 
-![images/Untitled%206.png](images/Untitled%206.png)
+![images/json-server-6.png](images/json-server-6.png)
 
 ## DELETE - 레코드 삭제
 
@@ -116,11 +116,11 @@ PUT http://localhost:4000/members/1
 DELETE http://localhost:4000/members/1
 ```
 
-![images/Untitled%207.png](images/Untitled%207.png)
+![images/json-server-7.png](images/json-server-7.png)
 
 해당 id의 레코드가 삭제된다.
 
-![images/Untitled%208.png](images/Untitled%208.png)
+![images/json-server-8.png](images/json-server-8.png)
 
 ---
 
