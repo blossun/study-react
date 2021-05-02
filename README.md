@@ -6,4 +6,4 @@
 - [[Velopert\] 누구든지 하는 리액트](https://velopert.com/reactjs-tutorials)
 
 ## Project
-- [React & TypeScrit Project](./react-app)
+- [React & TypeScrit Project](./react-crud-ts)
