@@ -49,15 +49,28 @@ const WindowList: React.FC<Props> = ({ form }) => {
    */
   const fetchWindowList = useCallback(
     (tableParams?: TableParam) => {
-      const { keyword, partialMatch, modifierId, forceRemovingYn } = form.getFieldsValue()
+      const { name, partialMatch, type, modifierId, expose } = form.getFieldsValue()
+      // [TEST]
+      console.log("%c[form.getFieldsValue()]", 'red', form.getFieldsValue())
       const params = {
-        keyword,
+        "name": !name ? '미스터' : name,
         partialMatch,
+        "type": !type ? 'mister' : type,
         modifierId,
-        forceRemovingYn: !forceRemovingYn ? '' : forceRemovingYn === 'N' ? 'Y' : 'N',
+        "expose": !expose ? true : expose === 'Y' ? true : false,
         pagingSize: (tableParams && tableParams.pageSize) || pagination.pageSize,
         page: (tableParams && tableParams.page) || pagination.current,
       }
+      // [REAL]
+      // const params = {
+      //   "name" : name,
+      //   partialMatch,
+      //   type,
+      //   modifierId,
+      //   expose: !expose ? '' : expose === 'N' ? 'Y' : 'N',
+      //   pagingSize: (tableParams && tableParams.pageSize) || pagination.pageSize,
+      //   page: (tableParams && tableParams.page) || pagination.current,
+      // }
       setIsLoading(true)
       axios
         // .get(`${BASE_PATH}/windows.nhn`, { params })
@@ -205,17 +218,17 @@ const WindowList: React.FC<Props> = ({ form }) => {
       <Form onSubmit={onSubmit} layout="inline">
         <Row justify="space-between" type="flex">
           <Col>
-            <Form.Item label="윈도우명">{form.getFieldDecorator('windowName')(<Input placeholder="키워드" allowClear={true} />)}</Form.Item>
-
-            <Form.Item label="키워드">{form.getFieldDecorator('keyword')(<Input placeholder="키워드" allowClear={true} />)}</Form.Item>
+            <Form.Item label="윈도우명">{form.getFieldDecorator('name')(<Input placeholder="윈도우명" allowClear={true} />)}</Form.Item>
             <Form.Item label="일치조건">
               {form.getFieldDecorator('partialMatch', {
                 initialValue: true,
               })(<Checkbox checked={form.getFieldValue('partialMatch')}>부분매치</Checkbox>)}
             </Form.Item>
-            <Form.Item label="작업자">{form.getFieldDecorator('modifierId')(<Input placeholder="작업자Id" allowClear={true} />)}</Form.Item>
+
+            <Form.Item label="타입">{form.getFieldDecorator('type')(<Input placeholder="타입" allowClear={true} />)}</Form.Item>
+            <Form.Item label="작업자">{form.getFieldDecorator('modifierId')(<Input placeholder="작업자ID" allowClear={true} />)}</Form.Item>
             <Form.Item label="사용여부">
-              {form.getFieldDecorator('forceRemovingYn', {
+              {form.getFieldDecorator('expose', {
                 initialValue: '',
               })(
                 <Select style={{ width: 120 }}>
@@ -226,14 +239,14 @@ const WindowList: React.FC<Props> = ({ form }) => {
               )}
             </Form.Item>
           </Col>
+          <Col>
+            <Button type="primary" htmlType="submit">
+              검색
+          </Button>
+          </Col>
         </Row>
       </Form>
       <Row justify="end" type="flex" gutter={8} style={{ paddingTop: '10px' }}>
-        <Col>
-          <Button type="primary" htmlType="submit">
-            검색
-          </Button>
-        </Col>
         <Col>
           <Button type="primary" onClick={handleClickAddWindow}>
             추가
