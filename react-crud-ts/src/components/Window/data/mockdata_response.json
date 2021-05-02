@@ -1,0 +1,92 @@
+{
+  "windows": [
+    {
+      "result": {
+        "content": [
+          {
+            "id": 1,
+            "seq": 1,
+          "name": "기획전aa11888",
+          "url": "https://shopping.naver.com/plan2/p/index.nhnddddd",
+          "type": "themebb22",
+          "expose": false,
+          "registerDate": "2020-08-27 19:42:53",
+          "lastModifierId": "KR11111",
+          "lastModifiedDate": "2020-09-23 10:05:13"
+          },
+          {
+            "id": 2,
+            "seq": 2,
+            "name": "미스터",
+            "url": "https://m.shopping.naver.com/mister/trends",
+            "type": "mister",
+            "expose": true,
+            "registerDate": "2020-08-24 18:31:24",
+            "lastModifierId": "KR22222",
+            "lastModifiedDate": "2020-09-10 04:46:30"
+          }
+        ],
+        "pageable": {
+          "sort": {
+            "unsorted": true,
+            "sorted": false,
+            "empty": true
+          },
+          "pageNumber": 0,
+          "pageSize": 20,
+          "offset": 0,
+          "paged": true,
+          "unpaged": false
+        },
+        "totalPages": 1,
+        "totalElements": 1,
+        "last": true,
+        "size": 20,
+        "sort": {
+          "unsorted": true,
+          "sorted": false,
+          "empty": true
+        },
+        "number": 0,
+        "numberOfElements": 1,
+        "first": true,
+        "empty": false
+      },
+      "error": null
+    }
+  ],
+  "id": [
+    {
+      "id": 1,
+      "result": {
+        "content": {
+          "seq": 1,
+          "name": "기획전aa11888",
+          "url": "https://shopping.naver.com/plan2/p/index.nhnddddd",
+          "type": "themebb22",
+          "expose": false,
+          "registerDate": "2020-08-27 19:42:53",
+          "lastModifierId": "KR11111",
+          "lastModifiedDate": "2020-09-23 10:05:13"
+        },
+        "error": null
+      }
+    },
+    {
+      "id": 2,
+      "result": {
+        "content": {
+          "seq": 2,
+          "name": "미스터",
+          "url": "https://m.shopping.naver.com/mister/trends",
+          "type": "mister",
+          "expose": true,
+          "registerDate": "2020-08-24 18:31:24",
+          "lastModifierId": "KR22222",
+          "lastModifiedDate": "2020-09-10 04:46:30"
+        },
+        "error": null
+      }
+    }
+  ]
+}

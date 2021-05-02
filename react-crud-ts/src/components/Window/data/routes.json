@@ -1,0 +1,6 @@
+{
+    "/windows/*": "/$1",
+    "/:resource/:id/show": "/:resource/:id",
+    "/windows/:category": "/windowss?category=:category",
+    "/windows\\?id=:id": "/windows/:id"
+  }

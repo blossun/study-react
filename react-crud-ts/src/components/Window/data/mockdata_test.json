@@ -1,0 +1,25 @@
+{
+  "members": [
+    {
+      "id": 2,
+      "seq": 2,
+      "name": "조승우",
+      "url": "https://test.solar.dev/조승우",
+      "lastModifiedDate": "2020-09-10 04:46:30"
+    },
+    {
+      "id": 3,
+      "seq": 3,
+      "name": "소지섭",
+      "url": "https://test.solar.dev/소지섭",
+      "lastModifiedDate": "2021-05-01 17:55:41"
+    },
+    {
+      "seq": 4,
+      "name": "김태리",
+      "url": "https://test.solar.dev/조승우",
+      "lastModifiedDate": "2020-09-10 04:46:30",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+.ant-table-title {
+  font-size: 139%;
+  font-weight: 600;
+}
+.ant-row ant-form-item {
+  margin-bottom: 2%
+}
+
+.ant-breadcrumb .ant-breadcrumb-link {
+  font-weight: bold;
+}
+
+.selected {
+  font-weight: bold;
+  background: #E6F7D8;
+}
+
+.selected td{
+  font-weight: bold;
+  background: #E6F7D8;
+}
+
+.highlighting {
+  font-weight: bold;
+  color: deepskyblue;
+}
+
+.product-img {
+  width: 50%;
+}
+
+.tatble-title {
+  font-size: 15pt;
+}
+
+.black-modal-title {
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.black-modal-title .id {
+  color: gray;
+  font-weight: normal;
+}
